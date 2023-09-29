@@ -7,7 +7,7 @@ let Operator = ""
 //un parametro
 function Add_Number(number){
     //Validamos si el numero actual tiene un valor de 0
-    if(Number_current !== "0"){
+    if(Number_current === "0"){
         Number_current = number;
         }//Caso contrario
         else{
