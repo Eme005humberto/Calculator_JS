@@ -14,7 +14,17 @@ function Add_Number(number){
             Number_current += number;//Realizamos una suma por asignacion en donde si agregamos otro numero 
             //en primero se almacena al final y el segundo numero queda almacenado en el principio
         }
-        //Modificamos los datos
-        updateResult();
+        updateResult(); //Modificamos los datos
     }
+//Fin de la funcion
+function Add_Operator(op){
+    //Validamos primero
+    if(Operator != ""){
+        //calculamos el resultado
+        calculateResult();
+    }
+    //Inciaciamos un nuevo operador
+    Operator = op;
+    Number_previos = Number_current;//Number_Current le pasa el valor a la variable Number Previos 
+    //Para poder agregar otro numero y recordar el ultimo numero ingresado
 }
