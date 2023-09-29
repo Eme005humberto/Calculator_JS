@@ -27,4 +27,38 @@ function Add_Operator(op){
     Operator = op;
     Number_previos = Number_current;//Number_Current le pasa el valor a la variable Number Previos 
     //Para poder agregar otro numero y recordar el ultimo numero ingresado
-}
+    Number_current = "0"//Almacena el valor de 0 para poder almacenar otro numero
+}//Fin de la funcion Add Operator
+
+//Creamos la funcion que sirve para realizar las operaciones
+function calculateResult(){
+    //Creamos una variable que almacena el resultado de las operaciones
+    let result;
+    switch(Operator){
+        case '+':
+            result = parseInt(Number_previos) + parseInt(Number_current);
+            break;
+            case '-':
+                result = parseInt(Number_previos) - parseInt(Number_current);
+                break;
+                case '*':
+                    result = parseInt(Number_previos) * parseInt(Number_current);
+                    break;
+                    //Agregamos una validacion al momento de realizar una division no 
+                    //podemos dividir por 0
+                    case '/':
+                        if(Number_current !== '0'){
+                            result = parseFloat(previousInput) / parseFloat(currentInput);
+                            break;
+                        }else{
+                            alert("No puedes dividir por cero 0!!!");//Mostramos mensaje
+                            Clear();//Funcion que sirve para limpiar
+                            return;
+                        }
+                        break;
+    }
+    //Convertimos en una cadena de texto
+    Number_current = result.toString();//Esa variable gurada el resultado
+    Operator = "";
+    updateResult();//Se moddifica
+}//Fin de la funcion
