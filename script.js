@@ -19,7 +19,7 @@ function Add_Number(number){
 //Fin de la funcion
 function Add_Operator(op){
     //Validamos primero
-    if(Operator != ""){
+    if(Operator !== ""){
         //calculamos el resultado
         calculateResult();
     }
@@ -62,3 +62,15 @@ function calculateResult(){
     Operator = "";
     updateResult();//Se moddifica
 }//Fin de la funcion
+
+//Funcion para limpiar los datos
+function Clear(){
+    Number_current = '0';
+    Operator = '';
+    updateResult();//Se moddifica
+}//Fin de la funcion
+
+//Funcion para actualizar interfaz
+function updateResult(){
+    document.getElementById('result').value = Number_current;
+}
